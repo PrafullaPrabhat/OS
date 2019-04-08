@@ -1,20 +1,78 @@
-#include <stdio.h>
+#include<stdio.h>
+#include<stdlib.h>
+#define size 5000
 
-
+int queue[size],front= -1,rear= -1;
+void enqueue(int);
+void display();
 int main()
-
 {
-    
-int i,arr[5000];
-    
-for(i=0;i<5000;i++)
-    
-{
-        
-printf("Q11",i);
-    
+	int i,n;
+	int value;
+	printf("no of elements to insert:");
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&value);
+		enqueue(value);
+	}
+	display();
+	calc();
 }
-    
-return 0;
+void enqueue(int value)
+{
+	if(rear==size-1)
+	{
+		printf("queue--full");
+	}
+	else{
+		if(front==-1)
+			front=0;
+		rear++;
+		queue[rear]=value;
+}
+}
+void display()
+{
+	int i;
+	if(rear==-1)
+	{
+		printf("queue--empty");
+	}
+	else{
+	
+	for(i=front;i<=rear;i++)
+	{
+		printf("%d\t",queue[i]);
+	}
+}
+}
 
+void calc()
+{
+	int total_distance=0,d,i;
+	int current_pos,prev_pos;
+	printf("\n");
+	printf("Enter prev postion:");
+	scanf("%d",&prev_pos);
+	getchar();
+	printf("\n");
+	printf("Enter current postion");
+	scanf("%d",&current_pos);
+	getchar();
+	d=current_pos-queue[front];
+	if(d<0)
+		total_distance=-d;
+		else
+		total_distance=d;
+	for(i=front;i<rear;i++)
+	{
+		d=queue[i]-queue[i+1];
+		if(d<0)
+		d=-d;
+		
+total_distance=total_distance + d;
+	}
+	printf("\a");
+	printf("Distance Covered =%d",total_distance);
 }
