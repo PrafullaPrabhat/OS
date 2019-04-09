@@ -1,21 +1,21 @@
-#include<stdio.h>
-#include<stdlib.h>
-#define size 5000
-int queue[size],front= -1,rear= -1;
-void enqueue(int);
-void display();
-int main()
+#include<stdio.h>//header file for standard i/o
+#include<stdlib.h>//header file for standard library
+#define size 5000 //To give the size because array will not take the value of this much limit
+int queue[size],front= -1,rear= -1;//declaring the variables
+void enqueue(int);//creating function with integer parameter
+void display();//creating funtion without parameter
+int main()//main function
 {
 	int i,n;
 	int value;
 	printf("no of elements to insert:");
 	scanf("%d",&n);
-	for(i=0;i<n;i++)
+	for(i=0;i<n;i++)//after taking the input of the distance to cover
 	{
 		scanf("%d",&value);
 		enqueue(value);
 	}
-	display();
+	display();//calling the display method.
 	calc();
 }
 void enqueue(int value)
