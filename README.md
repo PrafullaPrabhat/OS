@@ -9,3 +9,4 @@ starting from the current head position, what is the total distance (in cylinder
 requests for each of the SCAN disk-scheduling algorithms?
 
 
+ 
