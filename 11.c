@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 #define size 5000
-
 int queue[size],front= -1,rear= -1;
 void enqueue(int);
 void display();
@@ -47,7 +46,6 @@ void display()
 	}
 }
 }
-
 void calc()
 {
 	int total_distance=0,d,i;
